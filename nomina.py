@@ -1,5 +1,5 @@
 #constante del valor mínimo
-SMLV= 1300000
+SMLV = 1300000
 
 #función para el perfil de empleado tiempo completo
 def pago_tiempo_completo(salario_mensual, dias_trabajados):
@@ -25,19 +25,22 @@ def pago_por_comision(ventas):
         comision = ventas * 0.70
     else:
         comision = 0
-
+#calculo del salario mas el bono
     bono = SMLV * 0.5
     return comision + bono
 
+#función para el calculo de deducciones
 def calcular_deducciones(salario_bruto):
     salud = salario_bruto * 0.04
     pension = salario_bruto * 0.04
     return salud, pension
 
+#función para el auxilio de transporte
 def calcular_auxilio(salario_bruto, tope, auxilio):
     if salario_bruto <= tope:
         return auxilio
     return 0
 
+#funcion para el pago neto
 def calcular_pago_neto(salario_bruto, salud, pension, auxilio):
     return salario_bruto - salud - pension + auxilio
