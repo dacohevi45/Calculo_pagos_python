@@ -37,7 +37,7 @@ while True:
         nombre = input('Ingrese su nombre: ')
         salario_mensual = float(input('Ingrese su salario mensual: '))
         dias_trabajados = int(input('Ingrese los dias trabajados (1-30, 1-31): '))
-        #condición anidada si el salario es 0, si los dias trabajados es < 1 o si los dias trabajados < 31
+        #condición anidada si el salario es <= 0, si los dias trabajados es < 1 o si los dias trabajados >= 31
         if salario_mensual <= 0 or dias_trabajados < 1 or dias_trabajados > 31:
             print('Datos inválidos, intente de nuevo')
             #que el ciclo continue
