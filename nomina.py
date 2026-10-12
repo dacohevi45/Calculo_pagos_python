@@ -1,13 +1,13 @@
 #constante del valor mínimo
-SLMV= 1300000
+SMLV= 1300000
 
 #función para el perfil de empleado tiempo completo
-def pago_tiempo_competo(salario_mensual, dias_trabajados):
+def pago_tiempo_completo(salario_mensual, dias_trabajados):
     #condicional de dias trabajados
     if dias_trabajados >= 30:
         return salario_mensual
     else: 
-        return salario_mensual (dias_trabajados / 30)
+        return salario_mensual * (dias_trabajados / 30)
 
 #función para el perfil de empleado por horas
 def pago_por_horas(horas_trabajadas, valor_hora):
@@ -15,7 +15,6 @@ def pago_por_horas(horas_trabajadas, valor_hora):
 
 #función para el perfil de pago por comisiones
 def pago_por_comision(ventas):
-    #condicionales de las comisiones
     if ventas >= 5000000 and ventas <= 10000000:
         comision = ventas * 0.25
     elif ventas >= 11000000 and ventas <= 40000000:
@@ -26,8 +25,9 @@ def pago_por_comision(ventas):
         comision = ventas * 0.70
     else:
         comision = 0
-        bono = SLMV * 0.5
-        return comision + bono
+
+    bono = SMLV * 0.5
+    return comision + bono
 
 def calcular_deducciones(salario_bruto):
     salud = salario_bruto * 0.04
